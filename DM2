@@ -1,0 +1,280 @@
+import numpy as np
+# 1-D array called zeros having 10 elements and all the elements are set to zero. 
+zeros = np.zeros((10,))
+print (zeros)
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+#1-D array called vowels having the elements ‘a’, ‘e’, ‘i’, ‘o’ and ‘u’. 
+vowels = np.array(list('aeiou'))
+print (vowels)
+['a' 'e' 'i' 'o' 'u']
+#2-D array called ones having 2 rows and 5 columns and all the elements are set to 1 and dtype as int. 
+ones =np.ones ((2,5),dtype=int)
+print(ones )
+[[1 1 1 1 1]
+ [1 1 1 1 1]]
+#create a 2-D array called myarray1 having 3 rows and 3 columns and store the following data: 
+myarray1  =np.array([[2.7,  -2,  -19],[0,  3.4,  99.9],[10.6,  0,  13]])
+print (myarray1)
+[[  2.7  -2.  -19. ]
+ [  0.    3.4  99.9]
+ [ 10.6   0.   13. ]]
+# myarray2 using arange() having 3 rows and 5 columns with start value = 4,step size 4 and dtype as float.
+myarray2 =np.arange(4,61,4,float).reshape(3,5)
+print(myarray2)
+[[ 4.  8. 12. 16. 20.]
+ [24. 28. 32. 36. 40.]
+ [44. 48. 52. 56. 60.]]
+#Find the dimensions, shape, size, data type of the items and itemsize of arrays zeros, vowels,ones, myarray1 and myarray2. 
+print("zeros array dimension,shape,size,datatype,itemsize:",zeros.ndim,",",zeros.shape,",",zeros.size,",",zeros.dtype,",",zeros.itemsize)
+print("vowels array dimension,shape,size,datatype,itemsize:",vowels.ndim,",",vowels.shape,",",vowels.size,",",vowels.dtype,",",vowels.itemsize)
+print("ones array dimension,shape,size,datatype,itemsize:",ones.ndim,",",ones.shape,",",ones.size,",",ones.dtype,",",ones.itemsize)
+print("myarray1 array dimension,shape,size,datatype,itemsize:",myarray1.ndim,",",myarray1.shape,",",myarray1.size,",",myarray1.dtype,",",myarray1.itemsize)
+print("myarray2 array dimension,shape,size,datatype,itemsize:",myarray2.ndim,",",myarray2.shape,",",myarray2.size,",",myarray2.dtype,",",myarray2.itemsize)
+zeros array dimension,shape,size,datatype,itemsize: 1 , (10,) , 10 , float64 , 8
+vowels array dimension,shape,size,datatype,itemsize: 1 , (5,) , 5 , <U1 , 4
+ones array dimension,shape,size,datatype,itemsize: 2 , (2, 5) , 10 , int32 , 4
+myarray1 array dimension,shape,size,datatype,itemsize: 2 , (3, 3) , 9 , float64 , 8
+myarray2 array dimension,shape,size,datatype,itemsize: 2 , (3, 5) , 15 , float64 , 8
+#Reshape the array ones to have all the 10 elements in a single row.
+print("Reshape of ones array into single line",ones.reshape(10,))
+
+#2nd and 3rd element of the array vowels
+print("2nd and 3rd element of the array vowels:",vowels[2:4])
+
+#all elements in the 2nd and 3rd row of the array myarray1:
+print("all elements in the 2nd and 3rd row of the array myarray1:",myarray1[1,0:],myarray1[2,0:])
+
+#the elements in the 1st and 2nd column of the array myarray1:
+print("the elements in the 1st and 2nd column of the array myarray1:",myarray1[0,0:2],myarray1[1,0:2],myarray1[2,0:2])
+
+#the elements in the 1st column of the 2nd and 3rd row of the array myarray1
+print("the elements in the 1st column of the 2nd and 3rd row of the array myarray1:",myarray1[1,0],myarray1[2,0])
+
+#Reverse of vowels array
+print("Reverse of vowels array:",vowels[::-1])
+Reshape of ones array into single line [1 1 1 1 1 1 1 1 1 1]
+2nd and 3rd element of the array vowels: ['i' 'o']
+all elements in the 2nd and 3rd row of the array myarray1: [ 0.   3.4 99.9] [10.6  0.  13. ]
+the elements in the 1st and 2nd column of the array myarray1: [ 2.7 -2. ] [0.  3.4] [10.6  0. ]
+the elements in the 1st column of the 2nd and 3rd row of the array myarray1: 0.0 10.6
+Reverse of vowels array: ['u' 'o' 'i' 'e' 'a']
+print("Divide all elements of array ones by 3:",ones/3)
+Divide all elements of array ones by 3: [[0.33333333 0.33333333 0.33333333 0.33333333 0.33333333]
+ [0.33333333 0.33333333 0.33333333 0.33333333 0.33333333]]
+# Add the arrays myarray1 and myarray2.
+myarray1 = np.array([[2.7,-2,-19],[0,3.4,99.9],[10.6,0,13]])
+myarray2 = np.arange(4,45,4,dtype=float)
+myarray2.resize(3,3)
+myarray1 + myarray2
+array([[  6.7,   6. ,  -7. ],
+       [ 16. ,  23.4, 123.9],
+       [ 38.6,  32. ,  49. ]])
+ #Subtract myarray1 from myarray2 and store the result in a new array
+myarray1 = np.array([[2.7,-2,-19],[0,3.4,99.9],[10.6,0,13]])
+myarray2 = np.arange(4,45,4,dtype=float)
+myarray2.resize(3,3)
+myarray2-myarray1
+array([[  1.3,  10. ,  31. ],
+       [ 16. ,  16.6, -75.9],
+       [ 17.4,  32. ,  23. ]])
+#Multiply myarray1 and myarray2 element wise. 
+myarray1 = np.array([[2.7,-2,-19],[0,3.4,99.9],[10.6,0,13]])
+myarray2 = np.arange(4,45,4,dtype=float)
+myarray2.resize(3,3)
+myarray2 * myarray1
+array([[  10.8,  -16. , -228. ],
+       [   0. ,   68. , 2397.6],
+       [ 296.8,    0. ,  468. ]])
+#Do the matrix multiplication of myarray1 and myarray2 and store the result in a new array myarray3. 
+myarray1 = np.array([[2.7,-2,-19],[0,3.4,99.9],[10.6,0,13]])
+myarray2 = np.arange(4,45,4,dtype=float)
+myarray2.resize(3,3)
+myarray3 = myarray2 @ myarray1
+myarray3
+array([[ 138. ,   19.2,  879.2],
+       [ 297.6,   36. , 2006. ],
+       [ 457.2,   52.8, 3132.8]])
+#Divide myarray1 by myarray2. 
+myarray1 = np.array([[2.7,-2,-19],[0,3.4,99.9],[10.6,0,13]])
+myarray2 = np.arange(4,45,4,dtype=float)
+myarray2.resize(3,3)
+myarray1 / myarray2
+array([[ 0.675     , -0.25      , -1.58333333],
+       [ 0.        ,  0.17      ,  4.1625    ],
+       [ 0.37857143,  0.        ,  0.36111111]])
+#Find the cube of all elements of myarray1 and divide the resulting array by 2.
+myarray1 = np.array([[2.7,-2,-19],[0,3.4,99.9],[10.6,0,13]])
+myarraycube = myarray1 ** 3
+myarraycube/2
+array([[ 9.841500e+00, -4.000000e+00, -3.429500e+03],
+       [ 0.000000e+00,  1.965200e+01,  4.985015e+05],
+       [ 5.955080e+02,  0.000000e+00,  1.098500e+03]])
+#Find the square root of all elements of myarray2 and divide the resulting array by 2. The result should be rounded to two places of decimals.
+myarray2 = np.arange(4,45,4,dtype=float)
+myarray2.resize(3,3)
+arraysqrt = np.sqrt(myarray2)
+newarraysqrt = arraysqrt/2
+np.around(newarraysqrt,2)
+array([[1.  , 1.41, 1.73],
+       [2.  , 2.24, 2.45],
+       [2.65, 2.83, 3.  ]])
+#Find the transpose of ones
+ones = np.ones((2,5),dtype=int)
+print("transpose of ones:")
+print(ones.transpose())
+
+#Find the transpose of myarray2.
+myarray2 = np.arange(4,45,4,dtype=float)
+myarray2.resize(3,3)
+print("transpose of myarray2:")
+print(myarray2.transpose())
+
+#Sort the array vowels in reverse. 
+vowels = np.array(['a','e','i','o','u'])
+vowels[ : : -1]
+transpose of ones:
+[[1 1]
+ [1 1]
+ [1 1]
+ [1 1]
+ [1 1]]
+transpose of myarray2:
+[[ 4. 16. 28.]
+ [ 8. 20. 32.]
+ [12. 24. 36.]]
+array(['u', 'o', 'i', 'e', 'a'], dtype='<U1')
+#Sort the array myarray1 such that it brings the lowest value of the column in the first row and so on.
+myarray1 = np.array([[2.7,-2,-19],[0,3.4,99.9],[10.6,0,13]])
+myarray1.sort()
+print(myarray1)
+
+
+#Use NumPy. split() to split the array myarray2 into 5 arrays column wise. Store your resulting arrays in myarray2A, myarray2B, myarray2C, myarray2D and myarray2E. Print the arrays myarray2A, myarray2B, myarray2C, myarray2D and myarray2E
+myarray2 = np.arange(4,45,4,dtype=float)
+myarray2.resize(3,3)
+myarray2A, myarray2B, myarray2C = np.split(myarray2,[1,3])
+print(myarray2A, myarray2B, myarray2C)
+
+# t) Split the array zeros at array index 2, 5, 7, 8 and store the resulting arrays in zerosA, zerosB, zerosC and zerosD and print them.
+zeros = np.zeros(10,dtype=int)
+zerosnew = np.split(zeros,[2,5,7,8])
+zerosA = zerosnew[0]
+zerosB = zerosnew[1]
+zerosC = zerosnew[2]
+zerosD = zerosnew[3]
+print(zerosA, zerosB, zerosC ,zerosD)
+[[-19.   -2.    2.7]
+ [  0.    3.4  99.9]
+ [  0.   10.6  13. ]]
+[[ 4.  8. 12.]] [[16. 20. 24.]
+ [28. 32. 36.]] []
+[0 0] [0 0 0] [0 0] [0]
+#Concatenate the arrays myarray2A, myarray2B and myarray2C into an array having 3 rows and 3 columns
+myarray2 = np.arange(4,45,4,dtype=float)
+myarray2.resize(3,3)
+myarray2A, myarray2B, myarray2C = np.split(myarray2,[1,3])
+np.concatenate((myarray2A, myarray2B, myarray2C),axis=0)
+array([[ 4.,  8., 12.],
+       [16., 20., 24.],
+       [28., 32., 36.]])
+#  Create a 2-D array called myarray4 using arange() having 14 rows and 3 columns with start value = -1, step size 0.25 having. Split this array row wise into 3 equal parts and print the result.
+
+myarray4 = np.arange(-1,45,0.25,dtype=float)
+myarray4.resize(14,3)
+np.split(myarray4,3,axis=1)
+[array([[-1.  ],
+        [-0.25],
+        [ 0.5 ],
+        [ 1.25],
+        [ 2.  ],
+        [ 2.75],
+        [ 3.5 ],
+        [ 4.25],
+        [ 5.  ],
+        [ 5.75],
+        [ 6.5 ],
+        [ 7.25],
+        [ 8.  ],
+        [ 8.75]]),
+ array([[-0.75],
+        [ 0.  ],
+        [ 0.75],
+        [ 1.5 ],
+        [ 2.25],
+        [ 3.  ],
+        [ 3.75],
+        [ 4.5 ],
+        [ 5.25],
+        [ 6.  ],
+        [ 6.75],
+        [ 7.5 ],
+        [ 8.25],
+        [ 9.  ]]),
+ array([[-0.5 ],
+        [ 0.25],
+        [ 1.  ],
+        [ 1.75],
+        [ 2.5 ],
+        [ 3.25],
+        [ 4.  ],
+        [ 4.75],
+        [ 5.5 ],
+        [ 6.25],
+        [ 7.  ],
+        [ 7.75],
+        [ 8.5 ],
+        [ 9.25]])]
+# i. Find the sum of all elements. 
+myarray4 = np.arange(-1,45,0.25,dtype=float)
+myarray4.resize(14,3)
+print("the sum of all elements:")
+print(myarray4.sum())
+
+# ii. Find the sum of all elements row wise.
+myarray4 = np.arange(-1,45,0.25,dtype=float)
+myarray4.resize(14,3)
+print("the sum of all elements row wise:")
+print(myarray4.sum(axis=1))
+
+# iii. Find the sum of all elements column wise. 
+myarray4 = np.arange(-1,45,0.25,dtype=float)
+myarray4.resize(14,3)
+print("the sum of all elements column wise:")
+print(myarray4.sum(axis=0))
+
+
+# iv. Find the max of all elements. 
+myarray4 = np.arange(-1,45,0.25,dtype=float)
+myarray4.resize(14,3)
+print("the max of all elements:")
+myarray4.max()
+
+# v. Find the min of all elements in each row.
+myarray4 = np.arange(-1,45,0.25,dtype=float)
+myarray4.resize(14,3)
+print("the min of all the elements in each row:")
+myarray4.max(axis=1)
+
+# vi. Find the mean of all elements in each row. 
+myarray4 = np.arange(-1,45,0.25,dtype=float)
+myarray4.resize(14,3)
+print("the mean of all elements in each row:")
+myarray4.mean(axis=1)
+
+# vii. Find the standard deviation column wise.
+myarray4 = np.arange(-1,45,0.25,dtype=float)
+myarray4.resize(14,3)
+print("the standard deviation column wise:")
+myarray4.std(axis=0)
+the sum of all elements:
+173.25
+the sum of all elements row wise:
+[-2.25  0.    2.25  4.5   6.75  9.   11.25 13.5  15.75 18.   20.25 22.5
+ 24.75 27.  ]
+the sum of all elements column wise:
+[54.25 57.75 61.25]
+the max of all elements:
+the min of all the elements in each row:
+the mean of all elements in each row:
+the standard deviation column wise:
+array([3.02334666, 3.02334666, 3.02334666])
